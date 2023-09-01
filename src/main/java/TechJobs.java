@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+
 /**
  * Created by LaunchCode
  */
@@ -10,7 +11,7 @@ public class TechJobs {
 
     static Scanner in = new Scanner(System.in);
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
@@ -112,14 +113,31 @@ public class TechJobs {
                 validChoice = true;
             }
 
-        } while(!validChoice);
+        } while (!validChoice);
 
         return choiceKeys[choiceIdx];
     }
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        if (someJobs.size() < 1) {
+            System.out.print("No Results");
+        } else {
+            for (HashMap<String, String> jobsList : someJobs) {
+//           for(int i = 0; i< jobsList.size(); i++) {
+//               System.out.println(jobsList[i].values());
+//           }
+                //consider map.entry
+//            System.out.println(jobsList);
 
-        System.out.println("printJobs is not implemented yet");
+                {
+                    System.out.println("\n*****");
+                    for (Map.Entry<String, String> choice : jobsList.entrySet()) {
+                        System.out.println(choice.getKey() + ": " + choice.getValue());
+                    }
+                    System.out.println("*****");
+                }
+            }
+        }
     }
 }
