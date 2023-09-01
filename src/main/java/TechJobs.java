@@ -60,7 +60,7 @@ public class TechJobs {
 
                 // What is their search term?
                 System.out.println("\nSearch term:");
-                String searchTerm = in.nextLine();
+                String searchTerm = in.nextLine().toLowerCase();
 
                 if (searchField.equals("all")) {
                     printJobs(JobData.findByValue(searchTerm));
@@ -99,7 +99,7 @@ public class TechJobs {
                 choiceIdx = in.nextInt();
                 in.nextLine();
             } else {
-                String line = in.nextLine();
+                String line = in.nextLine().toLowerCase();
                 boolean shouldQuit = line.equals("x");
                 if (shouldQuit) {
                     return null;
